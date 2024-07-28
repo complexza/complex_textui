@@ -23,23 +23,23 @@ Made using the Svelte framework and the CFX Lua API with the template [bl_svelte
 ### Show UI
 
 ```lua
-exports['complex_textui']:showTextUI(text, keybind, position)
+exports.complex_textui.showTextUI(text, keybind, position)
 ```
 
 ### Hide UI
 
 ```lua
-exports['complex_textui']:hideTextUI()
+exports.complex_textui.hideTextUI()
 ```
 
 ### Change Text
 
 ```lua
-exports['complex_textui']:changeText(text)
+exports.complex_textui.changeText(text)
 ```
 
 ### Change Keybind
 
 ```lua
-exports['complex_textui']:changeKeybind(keybind)
+exports.complex_textui.changeKeybind(keybind)
 ```
