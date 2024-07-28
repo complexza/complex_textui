@@ -7,8 +7,8 @@ repository 'https://github.com/complexza/complex-text-ui'
 
 lua54 'yes'
 
-ui_page 'web/build/index.html'
--- ui_page 'http://localhost:3000/' --for dev
+--ui_page 'web/build/index.html'
+ui_page 'http://localhost:3000/' --for dev
 
 shared_script {
     'shared/**'

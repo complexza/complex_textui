@@ -4,7 +4,7 @@
 --- @param keybind string
 --- @param position string
 local showTextUI = function(text, keybind, position)
-    SendNUIEvent(Send.changeText, {text, keybind, position})
+    SendNUIEvent(Send.showTextUI, {text = text, keybind = keybind, position = position})
 end
 
 --- Hides the Text UI
@@ -30,7 +30,6 @@ exports('ChangeKeybind', changeKeybind)
 exports('ChangeText', changeText)
 
 if Config.debugMode then
-    DebugPrint("Text UI Initialized with Example Commands")
     -- Command to initialize the Text UI
     RegisterCommand('showTextUI', function(source, args, rawCommand)
         -- Example arguments

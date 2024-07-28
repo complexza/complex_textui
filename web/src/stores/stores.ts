@@ -21,7 +21,7 @@ export const RESOURCE_NAME = writable<string>(
         : get(CONFIG).DEBUG_RESOURCE_NAME,
 );
 
-/**
+/**s
  * Whether the current environment is the browser or the client.
  * @type {Writable<boolean>}
  */

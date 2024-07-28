@@ -1,20 +1,17 @@
 <script lang="ts">
     import { CONFIG, IS_BROWSER } from './stores/stores';
     import { InitialiseListen } from '@utils/listeners';
-    import Visibility from '@providers/Visibility.svelte';
     import TextMain from '@components/TextMain.svelte';
 
     CONFIG.set({
         fallbackResourceName: 'debug',
-        allowEscapeKey: true,
+        allowEscapeKey: false,
     });
 
     InitialiseListen();
 </script>
 
-<Visibility>
-    <TextMain />
-</Visibility>
+<TextMain />
 
 {#if import.meta.env.DEV}
     {#if $IS_BROWSER}
