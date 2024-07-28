@@ -1,23 +1,17 @@
 fx_version 'cerulean'
-
 game "gta5"
-
-author "Byte Labs"
+author "complexza"
 version '1.0.0'
-description 'Byte Labs Svelte / CFX Lua template.'
-repository 'https://github.com/Byte-Labs-Project/bl_svelte_template'
+description 'Text UI for FiveM Inspired by NP 4.0'
+repository 'https://github.com/complexza/complex-text-ui'
 
 lua54 'yes'
 
-ui_page 'build/index.html'
+ui_page 'web/build/index.html'
 -- ui_page 'http://localhost:3000/' --for dev
 
 shared_script {
     'shared/**'
-}
-
-server_script {
-    'server/**'
 }
 
 client_script {
@@ -25,5 +19,5 @@ client_script {
 }
 
 files {
-    'build/**',
+    'web/build/**',
 }

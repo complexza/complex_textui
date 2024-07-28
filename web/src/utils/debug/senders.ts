@@ -3,9 +3,18 @@ import { toggleVisible } from './visibility'
 import { Send } from '@enums/events'
 import { DebugEventSend, SendEvent } from '@utils/eventsHandlers'
 
-/**
- * The debug actions that will show up in the debug menu.
- */
+const positions = [
+    'top-left',
+    'top-middle',
+    'top-right',
+    'middle-left',
+    'middle-middle',
+    'middle-right',
+    'bottom-left',
+    'bottom-middle',
+    'bottom-right'
+];
+
 const SendDebuggers: DebugItem[] = [
     {
         label: 'Visibility',
@@ -21,31 +30,7 @@ const SendDebuggers: DebugItem[] = [
         ],
     },
     {
-        label: 'Slider',
-        actions: [
-            {
-                label: 'Change Value',
-                action: (value: number) =>
-                    DebugEventSend(Send.imageResize, value),
-                value: 50,
-                type: 'slider',
-            },
-        ],
-    },
-    {
-        label: 'Checkbox',
-        actions: [
-            {
-                label: 'Toggle',
-                action: (value: number) =>
-                    DebugEventSend(Send.imageInvert, value),
-                value: false,
-                type: 'checkbox',
-            },
-        ],
-    },
-    {
-        label: 'Text',
+        label: 'Change Text',
         actions: [
             {
                 label: 'Type',
@@ -57,26 +42,67 @@ const SendDebuggers: DebugItem[] = [
         ],
     },
     {
-        label: 'Button',
+        label: 'Change Keybind',
         actions: [
             {
-                label: 'Reset Text',
-                action: () => DebugEventSend(Send.resetText),
-            },
-        ],
-    },
-
-    {
-        label: 'Debug receiver example.',
-        actions: [
-            {
-                label: 'Emulates a POST To Client and get back a response.',
+                label: 'Type',
+                action: (value: string) =>
+                    DebugEventSend(Send.changeKeybind, value),
                 type: 'text',
-                placeholder: 'Type text to reverse.',
-                action: (value: string) => SendEvent("debug", value).then((reversed: string) => console.log(reversed,'color: red', 'color: white', 'color: green')),
+                placeholder: 'Type here',
             },
         ],
     },
-]
+    {
+        label: 'Show Text UI',
+        actions: [
+            {
+                label: 'Set',
+                action: () => {
+                    const text = prompt('Enter text:', 'Default text');
+                    const keybind = prompt('Enter keybind:', 'Default keybind');
+                    const position = prompt('Enter position (e.g., top-left, top-middle, bottom-right):', 'bottom-left');
+
+                    DebugEventSend(Send.showTextUI, {
+                        text: text || '',
+                        keybind: keybind || '',
+                        position: position || 'bottom-left'
+                    });
+                },
+                type: 'button',
+                placeholder: '',
+            },
+        ],
+    },
+    {
+        label: 'Hide Text UI',
+        actions: [
+            {
+                label: 'Hide',
+                action: () => DebugEventSend(Send.hideTextUI, {}),
+                type: 'button',
+                placeholder: '',
+            },
+        ],
+    },
+    {
+        label: 'Random Position',
+        actions: [
+            {
+                label: 'Randomize',
+                action: () => {
+                    const randomPosition = positions[Math.floor(Math.random() * positions.length)];
+                    DebugEventSend(Send.showTextUI, {
+                        text: 'Example Text',
+                        keybind: 'E',
+                        position: randomPosition
+                    });
+                },
+                type: 'button',
+                placeholder: '',
+            },
+        ],
+    }
+];
 
 export default SendDebuggers

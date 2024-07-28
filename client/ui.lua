@@ -1,7 +1,15 @@
 Send = {
-    visible = "resource:visible",
+    close = 'resource:close',
+    changeText = 'resource:changeText',
+    changeKeybind = 'resource:changeKeybind',
+    showTextUI = 'resource:showTextUI',
+    hideTextUI = 'resource:hideTextUI',
 }
 
 Receive = {
-    close = "resource:close",
+    visible = 'resource:visible',
+    changeText = 'resource:changeText',
+    changeKeybind = 'resource:changeKeybind',
+    showTextUI = 'resource:showTextUI',
+    hideTextUI = 'resource:hideTextUI',
 }

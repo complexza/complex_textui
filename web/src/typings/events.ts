@@ -19,15 +19,6 @@ export interface CommonActionProperties {
     delay?: number
 }
 
-export type ButtonAction = CommonActionProperties & {
-    type?: 'button'
-}
-
-export type CheckboxAction = CommonActionProperties & {
-    type: 'checkbox'
-    value?: boolean
-}
-
 export type SliderAction = CommonActionProperties & {
     type: 'slider'
     max?: number

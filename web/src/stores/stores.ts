@@ -32,3 +32,10 @@ export const IS_BROWSER = writable<boolean>(!(window as any).invokeNative);
  * @type {Writable<boolean>}
  */
 export const VISIBLE = writable<boolean>(false);
+
+export const textUI = writable({
+    SHOWTEXTUI: false,
+    text: '',
+    keybind: '',
+    position: 'top-left'
+});

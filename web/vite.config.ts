@@ -29,7 +29,7 @@ export default defineConfig({
       },
     build: {
       emptyOutDir: true,
-      outDir: '../build',
+      outDir: '../web/build',
       assetsDir: './',
       rollupOptions: {
         output: {

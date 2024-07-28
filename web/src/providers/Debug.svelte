@@ -13,9 +13,9 @@ import { InitialiseDebugSenders } from '@utils/debug/init';
     let menuOpen: boolean = false;
 </script>
 
-<div class="w-fit h-fit flex flex-col z-[9999999]">
+<div class=" w-fit h-fit flex flex-col z-[9999999]">
     <button
-        class="px-[1vw] py-[0.5vw] w-fit h-fit z-[9999999] bg-accent"
+        class="absolute right-0 px-[1vw] py-[0.5vw] w-fit h-fit z-[9999999] bg-accent"
         on:click={() => (menuOpen = !menuOpen)}
     >
         Debug
@@ -23,7 +23,7 @@ import { InitialiseDebugSenders } from '@utils/debug/init';
 
     {#if menuOpen}
         <ol
-            class="flex flex-col gap-2 bg-primary z-[9999999] max-w-[25vw] h-full px-[0.5vw] py-[0.5vw]"
+            class="absolute right-0 top-16 flex flex-col gap-2 bg-primary z-[9999999] max-w-[25vw] h-full px-[0.5vw] py-[0.5vw]"
         >
             {#each SendDebuggers as { label, actions }}
                 <li
