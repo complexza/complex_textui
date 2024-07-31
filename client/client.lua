@@ -4,7 +4,7 @@
 --- @param keybind string
 --- @param position string
 local showTextUI = function(text, keybind, position)
-    SendNUIEvent(Send.showTextUI, {text = text, keybind = keybind, position = position})
+    SendNUIEvent(Send.showTextUI, {text = text, keybind = keybind or '', position = position})
 end
 
 --- Hides the Text UI
@@ -32,7 +32,7 @@ exports('ChangeText', changeText)
 if Config.debugMode then
     -- Command to initialize the Text UI
     RegisterCommand('showTextUI', function(source, args, rawCommand)
-        exports.complex_textui:showTextUI("Open Garage", "F1", "bottom-middle")
+        exports.complex_textui:showTextUI('Open Garage', 'F1', 'bottom-middle')
     end, false)
 
     -- Command to hide the Text UI
@@ -48,7 +48,7 @@ if Config.debugMode then
 
     -- Command to change the Text UI keybind
     RegisterCommand('changeKeybind', function(source, args, rawCommand)
-        local newKeybind = args[1] or "E"
+        local newKeybind = args[1] or 'E'
         exports.complex_textui:changeKeybind(newKeybind)
     end, false)
 end
