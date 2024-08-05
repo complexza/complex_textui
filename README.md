@@ -31,17 +31,17 @@ exports.complex_textui.showTextUI(text, keybind, position)
 ### Hide UI
 
 ```lua
-exports.complex_textui.hideTextUI()
+exports.complex_textui:hideTextUI()
 ```
 
 ### Change Text
 
 ```lua
-exports.complex_textui.changeText(text)
+exports.complex_textui:changeText(text)
 ```
 
 ### Change Keybind
 
 ```lua
-exports.complex_textui.changeKeybind(keybind)
+exports.complex_textui:changeKeybind(keybind)
 ```
