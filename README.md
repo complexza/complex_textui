@@ -25,7 +25,7 @@ Made using the Svelte framework and the CFX Lua API with the template [bl_svelte
 If you dont want to show the keybind, just pass an empty string as the keybind.
 
 ```lua
-exports.complex_textui.showTextUI(text, keybind, position)
+exports.complex_textui:showTextUI(text, keybind, position)
 ```
 
 ### Hide UI
